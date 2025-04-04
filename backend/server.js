@@ -20,6 +20,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+app.get('/apiTesting', (req, res) => {
+  res.send('apiTesting .... Hello World!');
+});
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/orders', orderRoutes);
